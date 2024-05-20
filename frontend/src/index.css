@@ -107,16 +107,12 @@ a.email {
   color: var(--secondary);
 }
 
-/* gif and image not jumbotron */
-.about-fluid {
-  background-image: url(https://media1.tenor.com/images/b1b118ed130d9ab085e475ab0ecadcb6/tenor.gif?itemid=15826314);
+/* jumbotron */
+.jumbotron.jumbotron-fluid {
+  background-image: url('https://j.gifs.com/YE6OJA.gif');
   background-repeat: no-repeat;
-  background-size: 100%;
-  color: var(--background);
-  margin-bottom: 1em;
-  text-align: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  background-size: cover; /* Ensures the background covers the entire element */
+  height: 400px;
 }
 
 /***** visit website button *****/
@@ -132,6 +128,7 @@ a.email {
   border-radius: 45px;
   height: auto;
   padding: 0.5em 1em;
+  text-decoration: none;
 }
 
 .my-button:hover {

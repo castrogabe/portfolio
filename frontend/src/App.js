@@ -10,6 +10,7 @@ import BottomFooter from './components/BottomFooter';
 // pages
 import About from './pages/About';
 import Home from './pages/Home';
+import MernRender from './pages/MernRender'; // 2nd commit
 import Portfolio from './pages/Portfolio';
 import WebDesign from './pages/WebDesign';
 
@@ -21,10 +22,11 @@ function App() {
       <Header />
       <main className='mt-0'>
         <Routes>
-          <Route path='/about' element={<About />} />
           <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/webdesign' element={<WebDesign />} />
+          <Route path='/mernRender' element={<MernRender />} />
           {/* Protected Routes */}
 
           {/* Admin Routes */}

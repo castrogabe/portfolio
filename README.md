@@ -1,6 +1,6 @@
 # portfolio
 
-# 1nd Commit-Create React App, layout
+# 1st Commit-Create React App, layout
 
 . node -v (v18.20.2) // nvm use v18 //
 . npx create-react-app frontend
@@ -80,3 +80,15 @@ App.js > updated
 
 GIT 1st Commit
 Now you can check repository for updated code.
+
+# 2nd Commit-Home/Jumbotron, About, Portfolio, WebDesign
+
+FRONTEND
+folder: components
+Jumbotron.js > added
+
+folder: pages
+About.js > updated
+Home.js > updated & Jumbotron
+Portfolio.js > updated
+WebDesign.js > updated
