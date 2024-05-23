@@ -86,9 +86,39 @@ Now you can check repository for updated code.
 FRONTEND
 folder: components
 Jumbotron.js > added
+WebsiteCard.js > added
 
 folder: pages
 About.js > updated
 Home.js > updated & Jumbotron
 Portfolio.js > updated
 WebDesign.js > updated
+
+# 3rd Commit-backend MongoDB, Portfolio Static Data
+
+Terminal: mkdir backend (Root of portfolio)
+cd backend > npm init -y creates {}package.json
+
+BACKEND
+folder: models
+userModel.js > added
+websiteModel.js > added
+
+folder: routes
+seedRoutes.js > added
+
+data.js > added (website data)
+server.js > added
+.env.example > added
+
+FRONTEND
+folder: public
+images > added images
+
+folder: components
+WebsiteCard > added
+
+folder: pages
+Portfolio.js > updated
+
+utils.js > added for error handling
