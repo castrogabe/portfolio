@@ -5,8 +5,13 @@ import { Row, Col } from 'react-bootstrap';
 function WebDesign() {
   return (
     <>
-      <div class='keyboard'>
-        <img id='image' src='/images/keyBoard.jpg' width='100%' alt='' />
+      <div className='keyboard'>
+        <img
+          id='image'
+          src='/images/keyBoard.jpg'
+          width='100%'
+          alt='Keyboard'
+        />
       </div>
       <br />
 
@@ -15,7 +20,6 @@ function WebDesign() {
           <title>Web Design</title>
         </Helmet>
 
-        {/* design image on right text on left  */}
         <Row>
           <Col md={6}>
             <div className='box'>
@@ -24,53 +28,55 @@ function WebDesign() {
                 <li>
                   The process of designing a website: email me to schedule an
                   appointment in Inland Empire. If a physical appointment is not
-                  necessary we can chat about your vision.
+                  necessary, we can chat about your vision.
                 </li>
-
                 <li>
-                  I will produce a written quote based on your vision and amount
-                  of revisions.
+                  I will produce a written quote based on your vision and the
+                  number of revisions.
                 </li>
-
                 <li>
                   I will produce a design concept of your website before any
-                  coding is done and you are happy with the design.
+                  coding is done and ensure you are happy with the design.
                 </li>
               </ol>
               <hr />
 
               <h4>Web Development</h4>
               <p>
-                Programming Knowledge of Html5, CSS3, JavaScript, Angular,
-                React, PHP, MySQL, and (SEO) Search Engine Optimization to help
-                your clients find you on the web.
+                I have programming knowledge in HTML5, CSS3, JavaScript,
+                Angular, React, PHP, MySQL, and SEO (Search Engine Optimization)
+                to help your clients find you on the web.
               </p>
-
               <ol>
                 <li>
-                  I will program your website using code that is easy to read.
+                  I will program your website using code that is clean and easy
+                  to read.
                 </li>
                 <li>
-                  I test the code in my web browser to be sure everything flows
+                  I test the code in my web browser to ensure everything flows
                   and reads correctly.
                 </li>
                 <li>
-                  I design for mobile devices first then the computer last since
-                  most transactions are cell phone driven.
+                  I design for mobile devices first, then for desktop, as most
+                  transactions are mobile-driven.
                 </li>
                 <li>
-                  I stand behind my coding and product that I release to you.
+                  I stand behind the code and product that I release to you.
                 </li>
                 <li>
-                  You will get a email of all the coding files that you have
-                  from your website design.
+                  You will receive an email containing all the coding files from
+                  your website design.
                 </li>
               </ol>
             </div>
           </Col>
           <Col md={6}>
             <div className='box'>
-              <img src='/images/design.png' alt='' className='img-portfolio' />
+              <img
+                src='/images/design.png'
+                alt='Web Design'
+                className='img-portfolio'
+              />
             </div>
           </Col>
         </Row>

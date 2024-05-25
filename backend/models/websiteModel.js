@@ -8,6 +8,7 @@ const websiteSchema = new mongoose.Schema(
     language: { type: String, required: true },
     languageDescription: { type: String, required: true },
     description: { type: String, required: true },
+    link: { type: String, required: true }, // 4th commit
   },
   {
     timestamps: true,

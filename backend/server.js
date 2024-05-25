@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 const seedRouter = require('./routes/seedRoutes.js');
+const userRouter = require('./routes/userRoutes.js');
 const Website = require('./models/websiteModel');
 require('dotenv').config();
 
@@ -23,12 +24,40 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.use('/api/seed', seedRouter);
+app.use('/api/users', userRouter);
 app.get('/api/websites', async (req, res) => {
   try {
     const websites = await Website.find();
     res.send(websites);
   } catch (error) {
     res.status(500).send({ message: 'Error fetching websites' });
+  }
+});
+
+app.post('/api/websites', async (req, res) => {
+  const {
+    name,
+    slug,
+    image,
+    language,
+    languageDescription,
+    description,
+    link,
+  } = req.body;
+  const newWebsite = new Website({
+    name,
+    slug,
+    image,
+    language,
+    languageDescription,
+    description,
+    link,
+  });
+  try {
+    const createdWebsite = await newWebsite.save();
+    res.status(201).send({ message: 'Website Added', website: createdWebsite });
+  } catch (error) {
+    res.status(500).send({ message: 'Error Adding Website' });
   }
 });
 

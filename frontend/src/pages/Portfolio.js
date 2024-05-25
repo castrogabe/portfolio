@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import WebsiteCard from '../components/WebsiteCard';
-import { getError } from '../utils'; // Import the getError function
+import { getError } from '../utils';
 
 function Portfolio() {
   const [websites, setWebsites] = useState([]);
@@ -46,3 +46,6 @@ function Portfolio() {
 }
 
 export default Portfolio;
+
+// step 1 (AddWebSiteForm)
+// step 2 (Portfolio)

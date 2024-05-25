@@ -89,7 +89,7 @@ function Home() {
           <p>
             Take a look at some of the projects I’ve worked on to get a sense of
             my skills and style.{' '}
-            <a href='#portfolio' className='my-button'>
+            <a href='/portfolio' className='my-button'>
               View Portfolio
             </a>
           </p>

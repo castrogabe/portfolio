@@ -122,3 +122,37 @@ folder: pages
 Portfolio.js > updated
 
 utils.js > added for error handling
+
+# 4th Commit-Admin Login
+
+BACKEND
+folder: models
+websiteModel > updated for url link
+
+folder: routes
+userRoutes > added
+
+data.js > updated with url link
+server.js > updated
+utils.js > added
+
+FRONTEND
+folder: components
+(new folder in components) forms
+Signin.js > added (forms)
+Signup.js > added (forms)
+AdminRoute.js > added
+Header.js > updated for admin
+
+folder: constants
+actionTypes.js > added
+
+folder: pages
+Home.js > updated with /profile
+
+folder: reducer
+useReducer > added
+
+App.js > updated
+index.js > updated with StoreProvider
+Store.js > added
