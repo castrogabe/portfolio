@@ -6,6 +6,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BottomFooter from './components/BottomFooter';
+import AdminRoute from './components/AdminRoute'; // 5th commit
+
+// admin pages
+import WebsiteList from './pages/WebsiteList'; // 5th commit
 
 // pages
 import About from './pages/About';
@@ -32,6 +36,14 @@ function App() {
           <Route path='/signin' element={<Signin />} />
           <Route path='/signup' element={<Signup />} />
           {/* Admin Routes */}
+          <Route
+            path='/admin/websites'
+            element={
+              <AdminRoute>
+                <WebsiteList />
+              </AdminRoute>
+            }
+          />
         </Routes>
       </main>
       <Footer />

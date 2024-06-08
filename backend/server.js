@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const seedRouter = require('./routes/seedRoutes.js');
 const userRouter = require('./routes/userRoutes.js');
-const Website = require('./models/websiteModel');
+const websiteRouter = require('./routes/websiteRoutes.js');
 require('dotenv').config();
 
 mongoose
@@ -25,48 +25,18 @@ app.use(express.urlencoded({ extended: true }));
 // routes
 app.use('/api/seed', seedRouter);
 app.use('/api/users', userRouter);
-app.get('/api/websites', async (req, res) => {
-  try {
-    const websites = await Website.find();
-    res.send(websites);
-  } catch (error) {
-    res.status(500).send({ message: 'Error fetching websites' });
-  }
-});
+app.use('/api/websites', websiteRouter);
 
-app.post('/api/websites', async (req, res) => {
-  const {
-    name,
-    slug,
-    image,
-    language,
-    languageDescription,
-    description,
-    link,
-  } = req.body;
-  const newWebsite = new Website({
-    name,
-    slug,
-    image,
-    language,
-    languageDescription,
-    description,
-    link,
-  });
-  try {
-    const createdWebsite = await newWebsite.save();
-    res.status(201).send({ message: 'Website Added', website: createdWebsite });
-  } catch (error) {
-    res.status(500).send({ message: 'Error Adding Website' });
-  }
-});
-
-// Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'frontend/build')));
 
-// The "catchall" handler: for any request that doesn't match one above, send back React's index.html file.
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/frontend/build/index.html'));
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send({ message: 'Something broke!' });
 });
 
 const port = process.env.PORT || 8000;

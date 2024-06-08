@@ -139,6 +139,7 @@ utils.js > added
 FRONTEND
 folder: components
 (new folder in components) forms
+AdminPagination.js > added
 Signin.js > added (forms)
 Signup.js > added (forms)
 AdminRoute.js > added
@@ -156,3 +157,28 @@ useReducer > added
 App.js > updated
 index.js > updated with StoreProvider
 Store.js > added
+
+# 5th Commit-WebsiteList
+
+BACKEND
+folder: routes
+userRoutes.js > updated
+websiteRoutes.js > updated
+
+utils.js > updated
+
+FRONTEND
+folder: components
+AdminPagination.js > added
+LoadingBox.js > added
+MessageBox.js > added
+ProtectedRoute.js > added
+
+folder: pages
+WebsiteList.js > added
+
+folder: reducers
+websiteReducer.js > added
+
+App.js > updated
+WebsiteList.js > added
