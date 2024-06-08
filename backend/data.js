@@ -60,6 +60,16 @@ const data = {
         "Welcome to Home Paint Pros, your premier destination for expert home painting services. Our team of skilled painters is dedicated to transforming your living space with top-quality paint jobs that reflect your unique style. Whether you're looking for a fresh coat of paint or a complete color overhaul, Home Paint Pros delivers exceptional results with attention to detail and professionalism. Elevate your home's aesthetic with our bespoke painting services, tailored to bring your vision to life.",
       link: 'https://www.homepaintpros.com', // Added link property
     },
+    {
+      name: 'teamcode.com',
+      slug: 'team-code',
+      image: '/images/teamcode.png',
+      language: 'MERN Stack',
+      languageDescription: 'MongoDB, Express, ReactJS, Node.js',
+      description:
+        "Welcome to TeamCode, the premier destination for developers of all skill levels to enhance their coding prowess. Whether you're a beginner looking to start your journey or an experienced developer aiming to sharpen your skills, TeamCode offers comprehensive resources tailored to meet your needs.",
+      link: 'https://www.teamcode.com', // Added link property
+    },
   ],
 };
 

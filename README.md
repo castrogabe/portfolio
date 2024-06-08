@@ -182,3 +182,20 @@ websiteReducer.js > added
 
 App.js > updated
 WebsiteList.js > added
+
+# 6th Commit-WebsiteEdit
+
+BACKEND
+folder: routes
+uploadRoutes.js > added
+
+data.js > updated with new item (teamcode.com)
+server.js > updated
+mkdir uploads > added to root (this stores images uploads)
+
+FRONTEND
+. moved forms into pages from components
+app.js > updated
+
+folder: pages
+WebsiteEdit.js > added

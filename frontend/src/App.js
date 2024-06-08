@@ -6,10 +6,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BottomFooter from './components/BottomFooter';
-import AdminRoute from './components/AdminRoute'; // 5th commit
+import AdminRoute from './components/AdminRoute';
 
 // admin pages
-import WebsiteList from './pages/WebsiteList'; // 5th commit
+import WebsiteList from './pages/WebsiteList';
+import WebsiteEdit from './pages/WebsiteEdit'; // 6th commit
 
 // pages
 import About from './pages/About';
@@ -17,8 +18,8 @@ import Home from './pages/Home';
 import MernRender from './pages/MernRender';
 import Portfolio from './pages/Portfolio';
 import WebDesign from './pages/WebDesign';
-import Signin from './components/forms/Signin';
-import Signup from './components/forms/Signup';
+import Signin from './pages/forms/Signin';
+import Signup from './pages/forms/Signup';
 
 // user protected pages
 
@@ -41,6 +42,14 @@ function App() {
             element={
               <AdminRoute>
                 <WebsiteList />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path='/admin/website/:id'
+            element={
+              <AdminRoute>
+                <WebsiteEdit />
               </AdminRoute>
             }
           />
