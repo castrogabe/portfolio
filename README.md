@@ -199,3 +199,17 @@ app.js > updated
 
 folder: pages
 WebsiteEdit.js > added
+
+# 7th Commit-UserList/Edit
+
+BACKEND
+folder: routes
+userRoutes.js > updated with pagination
+
+FRONTEND
+folder: pages
+UserList.js > added
+UserEdit.js > added
+
+app.js > updated with UserList/userEdit
+Store.js > updated

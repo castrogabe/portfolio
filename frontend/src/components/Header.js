@@ -6,14 +6,13 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Store } from '../Store';
 import { getError } from '../utils';
-import { USER_SIGNOUT } from '../constants/actionTypes'; // Import action type
 
 function Header() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
 
   const signoutHandler = () => {
-    ctxDispatch({ type: USER_SIGNOUT });
+    ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
     window.location.href = '/signin';
   };

@@ -6,6 +6,42 @@ const { isAuth, isAdmin, generateToken } = require('../utils.js');
 
 const userRouter = express.Router();
 
+const PAGE_SIZE = 12; // 12 items per page
+
+// Admin route to get paginated list of users
+userRouter.get(
+  '/admin',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const { query } = req;
+    const page = query.page || 1;
+    const pageSize = query.pageSize || PAGE_SIZE;
+
+    const users = await User.find()
+      .skip(pageSize * (page - 1))
+      .limit(pageSize);
+    const countUsers = await User.countDocuments();
+    res.send({
+      users,
+      totalUsers: countUsers,
+      page,
+      pages: Math.ceil(countUsers / pageSize),
+    });
+  })
+);
+
+// Route to get all users (admin only)
+userRouter.get(
+  '/',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const users = await User.find({});
+    res.send(users);
+  })
+);
+
 // Get user by ID (admin only)
 userRouter.get(
   '/:id',

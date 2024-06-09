@@ -10,7 +10,9 @@ import AdminRoute from './components/AdminRoute';
 
 // admin pages
 import WebsiteList from './pages/WebsiteList';
-import WebsiteEdit from './pages/WebsiteEdit'; // 6th commit
+import WebsiteEdit from './pages/WebsiteEdit';
+import UserEdit from './pages/UserEdit'; // 7th commit
+import UserList from './pages/UserList'; // 7th commit
 
 // pages
 import About from './pages/About';
@@ -50,6 +52,22 @@ function App() {
             element={
               <AdminRoute>
                 <WebsiteEdit />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path='/admin/users'
+            element={
+              <AdminRoute>
+                <UserList />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path='/admin/user/:id'
+            element={
+              <AdminRoute>
+                <UserEdit />
               </AdminRoute>
             }
           />
