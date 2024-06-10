@@ -173,7 +173,7 @@ export default function WebsiteEdit() {
             {imagePreview && ( // Show image preview if available
               <img
                 src={imagePreview}
-                alt='Image Preview'
+                alt='' // Leave alt attribute empty for decorative images
                 style={{ width: '100px', height: '100px', marginTop: '10px' }}
               />
             )}

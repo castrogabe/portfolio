@@ -7,12 +7,13 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import BottomFooter from './components/BottomFooter';
 import AdminRoute from './components/AdminRoute';
+import ProtectedRoute from './components/ProtectedRoute'; // 8th commit
 
 // admin pages
 import WebsiteList from './pages/WebsiteList';
 import WebsiteEdit from './pages/WebsiteEdit';
-import UserEdit from './pages/UserEdit'; // 7th commit
-import UserList from './pages/UserList'; // 7th commit
+import UserEdit from './pages/UserEdit';
+import UserList from './pages/UserList';
 
 // pages
 import About from './pages/About';
@@ -24,6 +25,7 @@ import Signin from './pages/forms/Signin';
 import Signup from './pages/forms/Signup';
 
 // user protected pages
+import Profile from './pages/Profile'; // 8th commit
 
 function App() {
   return (
@@ -38,6 +40,15 @@ function App() {
           <Route path='/mernRender' element={<MernRender />} />
           <Route path='/signin' element={<Signin />} />
           <Route path='/signup' element={<Signup />} />
+          {/* Protected Routes */}
+          <Route
+            path='/profile'
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
           {/* Admin Routes */}
           <Route
             path='/admin/websites'

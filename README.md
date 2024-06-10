@@ -213,3 +213,16 @@ UserEdit.js > added
 
 app.js > updated with UserList/userEdit
 Store.js > updated
+
+# 8th Commit-Profile
+
+BACKEND
+folder: routes
+userRoutes.js > updated
+
+FRONTEND
+folder: pages
+WebsiteEdit.js > updated to fix warning
+Profile.js > added
+
+App.js > updated whit ProtectedRoute/Profile
