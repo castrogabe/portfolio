@@ -226,3 +226,18 @@ WebsiteEdit.js > updated to fix warning
 Profile.js > added
 
 App.js > updated whit ProtectedRoute/Profile
+
+# 9th Commit-Dashboard
+
+BACKEND
+folder: routes
+summaryRoutes > added
+
+server.js > updated
+
+FRONTEND
+. npm i react-google-charts
+folder: pages
+Dashboard.js > added
+
+App.js > updated with Dashboard

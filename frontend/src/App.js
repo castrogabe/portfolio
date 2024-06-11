@@ -7,9 +7,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import BottomFooter from './components/BottomFooter';
 import AdminRoute from './components/AdminRoute';
-import ProtectedRoute from './components/ProtectedRoute'; // 8th commit
+import ProtectedRoute from './components/ProtectedRoute';
 
 // admin pages
+import Dashboard from './pages/Dashboard'; // 9th commit
 import WebsiteList from './pages/WebsiteList';
 import WebsiteEdit from './pages/WebsiteEdit';
 import UserEdit from './pages/UserEdit';
@@ -25,7 +26,7 @@ import Signin from './pages/forms/Signin';
 import Signup from './pages/forms/Signup';
 
 // user protected pages
-import Profile from './pages/Profile'; // 8th commit
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -50,6 +51,14 @@ function App() {
             }
           />
           {/* Admin Routes */}
+          <Route
+            path='/admin/dashboard'
+            element={
+              <AdminRoute>
+                <Dashboard />
+              </AdminRoute>
+            }
+          />
           <Route
             path='/admin/websites'
             element={

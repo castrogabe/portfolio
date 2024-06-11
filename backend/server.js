@@ -6,6 +6,7 @@ const seedRouter = require('./routes/seedRoutes.js');
 const userRouter = require('./routes/userRoutes.js');
 const uploadRouter = require('./routes/uploadRoutes.js');
 const websiteRouter = require('./routes/websiteRoutes.js');
+const summaryRouter = require('./routes/summaryRoutes'); // 9th commit
 require('dotenv').config();
 
 mongoose
@@ -31,8 +32,8 @@ app.use('/api/upload', uploadRouter);
 app.use('/api/seed', seedRouter);
 app.use('/api/users', userRouter);
 app.use('/api/websites', websiteRouter);
+app.use('/api/summary', summaryRouter); // 9th commit
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
