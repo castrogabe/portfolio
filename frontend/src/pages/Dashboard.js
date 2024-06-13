@@ -44,6 +44,16 @@ export default function Dashboard() {
           type: 'FETCH_SUCCESS',
           payload: summaryData,
         });
+
+        const { data: messagesData } = await axios.get('/api/messages');
+
+        dispatch({
+          type: 'FETCH_SUCCESS',
+          payload: {
+            ...summaryData,
+            messages: messagesData,
+          },
+        });
       } catch (err) {
         dispatch({
           type: 'FETCH_FAIL',
@@ -68,7 +78,7 @@ export default function Dashboard() {
       ) : (
         <>
           <Row className='mt-3'>
-            <Col md={4}>
+            <Col md={3}>
               <Card>
                 <Card.Body>
                   <Card.Title>
@@ -81,7 +91,7 @@ export default function Dashboard() {
               </Card>
             </Col>
 
-            <Col md={4}>
+            <Col md={3}>
               <Card>
                 <Card.Body>
                   <Card.Title>
@@ -97,7 +107,7 @@ export default function Dashboard() {
               </Card>
             </Col>
 
-            <Col md={4}>
+            <Col md={3}>
               <Card>
                 <Card.Body>
                   <Card.Title>
@@ -106,6 +116,17 @@ export default function Dashboard() {
                       : 0}
                   </Card.Title>
                   <Card.Text>Website Stack</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col md={3}>
+              <Card>
+                <Card.Body>
+                  <Card.Title>
+                    {summary.messages ? summary.messages.length : 0}
+                  </Card.Title>
+                  <Card.Text> Messages</Card.Text>
                 </Card.Body>
               </Card>
             </Col>

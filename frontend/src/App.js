@@ -10,7 +10,8 @@ import AdminRoute from './components/AdminRoute';
 import ProtectedRoute from './components/ProtectedRoute';
 
 // admin pages
-import Dashboard from './pages/Dashboard'; // 9th commit
+import Dashboard from './pages/Dashboard';
+import Messages from './pages/Messages'; // 10th commit
 import WebsiteList from './pages/WebsiteList';
 import WebsiteEdit from './pages/WebsiteEdit';
 import UserEdit from './pages/UserEdit';
@@ -19,6 +20,7 @@ import UserList from './pages/UserList';
 // pages
 import About from './pages/About';
 import Home from './pages/Home';
+import Contact from './pages/Contact'; // 10th commit
 import MernRender from './pages/MernRender';
 import Portfolio from './pages/Portfolio';
 import WebDesign from './pages/WebDesign';
@@ -36,6 +38,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/webdesign' element={<WebDesign />} />
           <Route path='/mernRender' element={<MernRender />} />
@@ -88,6 +91,14 @@ function App() {
             element={
               <AdminRoute>
                 <UserEdit />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path='/admin/messages'
+            element={
+              <AdminRoute>
+                <Messages />
               </AdminRoute>
             }
           />

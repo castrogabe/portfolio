@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,11 +7,13 @@ const seedRouter = require('./routes/seedRoutes.js');
 const userRouter = require('./routes/userRoutes.js');
 const uploadRouter = require('./routes/uploadRoutes.js');
 const websiteRouter = require('./routes/websiteRoutes.js');
-const summaryRouter = require('./routes/summaryRoutes'); // 9th commit
-require('dotenv').config();
+const summaryRouter = require('./routes/summaryRoutes');
+const messageRouter = require('./routes/messageRoutes.js');
+
+const config = require('./config.js');
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(config.MONGODB_URL)
   .then(() => {
     console.log('connected to db');
   })
@@ -32,13 +35,15 @@ app.use('/api/upload', uploadRouter);
 app.use('/api/seed', seedRouter);
 app.use('/api/users', userRouter);
 app.use('/api/websites', websiteRouter);
-app.use('/api/summary', summaryRouter); // 9th commit
+app.use('/api/summary', summaryRouter);
+app.use('/api/messages', messageRouter);
 
+// Error handling middleware
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-const port = process.env.PORT || 8000;
+const port = config.PORT;
 app.listen(port, () => {
   console.log(`serve at http://localhost:${port}`);
 });

@@ -44,11 +44,10 @@ function Header() {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='me-auto  w-100  justify-content-end'>
-            <LinkContainer to='/about'>
-              <Nav.Link>
-                <i className='fas fa-info'></i> About
-              </Nav.Link>
-            </LinkContainer>
+            <NavDropdown title='About Us' id='basic-nav-dropdown'>
+              <NavDropdown.Item href='/about'>About Us</NavDropdown.Item>
+              <NavDropdown.Item href='/contact'>Contact Us</NavDropdown.Item>
+            </NavDropdown>
 
             <LinkContainer to='/portfolio'>
               <Nav.Link>

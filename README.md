@@ -241,3 +241,31 @@ folder: pages
 Dashboard.js > added
 
 App.js > updated with Dashboard
+
+# 10th Commit-Contact/Messages
+
+BACKEND
+. npm i nodemailer
+.env.example > updated with nodemailer EMAIL
+
+folder: models
+messageModel.js > added
+
+folder: routes
+messageRoutes.js > added
+
+config.js > added
+server.js > updated
+utils.js > updated
+
+FRONTEND
+folder: components
+Header.js > updated with Contact
+
+folder: pages
+Contact.js > added
+Messages.js > added
+Dashboard.js > updated with messages
+Home.js > updated for contact page
+
+App.js > updated with Contact/Messages pages

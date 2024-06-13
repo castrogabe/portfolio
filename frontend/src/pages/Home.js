@@ -65,7 +65,7 @@ function Home() {
           <p>
             Let’s discuss your project and how we can work together to achieve
             your goals.
-            <a href='#contact' className='my-button'>
+            <a href='/contact' className='my-button'>
               Contact Me Today
             </a>
           </p>
