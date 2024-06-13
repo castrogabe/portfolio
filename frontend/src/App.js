@@ -11,7 +11,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 // admin pages
 import Dashboard from './pages/Dashboard';
-import Messages from './pages/Messages'; // 10th commit
+import Messages from './pages/Messages';
 import WebsiteList from './pages/WebsiteList';
 import WebsiteEdit from './pages/WebsiteEdit';
 import UserEdit from './pages/UserEdit';
@@ -20,8 +20,9 @@ import UserList from './pages/UserList';
 // pages
 import About from './pages/About';
 import Home from './pages/Home';
-import Contact from './pages/Contact'; // 10th commit
+import Contact from './pages/Contact';
 import MernRender from './pages/MernRender';
+import Faq from './pages/Faq'; // 11th commit
 import Portfolio from './pages/Portfolio';
 import WebDesign from './pages/WebDesign';
 import Signin from './pages/forms/Signin';
@@ -39,6 +40,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/faq' element={<Faq />} />
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/webdesign' element={<WebDesign />} />
           <Route path='/mernRender' element={<MernRender />} />

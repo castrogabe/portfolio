@@ -131,27 +131,6 @@ a.email {
   text-decoration: none;
 }
 
-.my-button:hover {
-  cursor: pointer;
-  padding: 0.5em 1.5em;
-}
-
-/* button orange with orange border */
-.details a,
-.details a:link,
-.details a:active {
-  color: rgba(255, 103, 68, 0.91);
-  border: 2px solid rgba(255, 103, 68, 0.91) !important;
-  background-color: #fff;
-  text-decoration: none;
-}
-
-.details a:hover,
-.details a:focus {
-  background-color: rgba(255, 103, 68, 0.91) !important;
-  color: #fff;
-}
-
 .box {
   font-family: 'Maven pro', sans-serif;
   background: #fff;

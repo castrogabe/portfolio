@@ -34,7 +34,9 @@ function Home() {
                 Links to Social Media, favorite images, and video integration
               </li>
               <li>Responsive design using Bootstrap</li>
-              <li>Hosting on AWS Amplify with code management on GitHub</li>
+              <li>
+                Hosting on AWS Amplify, or Render with code management on GitHub
+              </li>
             </ul>
             Hiring me means you’ll have a professional, user-friendly website
             that’s optimized for both performance and aesthetics.

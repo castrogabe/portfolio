@@ -47,6 +47,7 @@ function Header() {
             <NavDropdown title='About Us' id='basic-nav-dropdown'>
               <NavDropdown.Item href='/about'>About Us</NavDropdown.Item>
               <NavDropdown.Item href='/contact'>Contact Us</NavDropdown.Item>
+              <NavDropdown.Item href='/faq'>FAQ</NavDropdown.Item>
             </NavDropdown>
 
             <LinkContainer to='/portfolio'>

@@ -269,3 +269,17 @@ Dashboard.js > updated with messages
 Home.js > updated for contact page
 
 App.js > updated with Contact/Messages pages
+
+# 11th Commit-FAQ
+
+FRONTEND
+folder: components
+Footer.js > updated
+Header.js > updated
+
+folder: pages
+Faq.js > added
+Home.js > updated
+
+App.js > updated with Faq
+index.css > updated

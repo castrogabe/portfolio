@@ -46,9 +46,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to='/#' className='email'>
+                <Link to='/' className='email'>
                   {' '}
-                  <i className='fa fa-info'></i> #
+                  <i className='fa fa-home'></i> Home
                 </Link>
               </li>
             </ul>
@@ -63,9 +63,9 @@ const Footer = () => {
               </Link>
 
               <li>
-                <Link to='/questions' className='email'>
+                <Link to='/faq' className='email'>
                   {' '}
-                  <i className='fa fa-info'></i> Questions Asked
+                  <i className='fa fa-info'></i> FAQ
                 </Link>
               </li>
             </ul>
