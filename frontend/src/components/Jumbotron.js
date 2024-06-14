@@ -1,7 +1,18 @@
 import React from 'react';
+import Typewriter from 'typewriter-effect';
 
-function Jumbotron() {
-  return <div className='jumbotron jumbotron-fluid' />;
-}
+const Jumbotron = ({ text }) => (
+  <div className='jumbotron jumbotron-fluid'>
+    <div className='typewriter-container'>
+      <Typewriter
+        options={{
+          strings: text,
+          autoStart: true,
+          loop: true,
+        }}
+      />
+    </div>
+  </div>
+);
 
 export default Jumbotron;

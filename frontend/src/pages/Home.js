@@ -8,7 +8,7 @@ function Home() {
       <Helmet>
         <title>Portfolio Home</title>
       </Helmet>
-      <Jumbotron />
+      <Jumbotron text={['MERN Stack', 'MEAN Stack', 'LAMP Stack']} />
       <br />
       <div className='content'>
         <div className='box'>

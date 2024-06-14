@@ -283,3 +283,14 @@ Home.js > updated
 
 App.js > updated with Faq
 index.css > updated
+
+# 12th Commit-Typewriter-Effect
+
+FRONTEND
+folder: components
+Jumbotron.js > updated with typewriter-effect
+
+folder: pages
+Home.js > updated Jumbotron
+
+index.css > updated with typewriter-effect
