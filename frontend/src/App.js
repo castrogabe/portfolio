@@ -22,7 +22,7 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import MernRender from './pages/MernRender';
-import Faq from './pages/Faq'; // 11th commit
+import Faq from './pages/Faq';
 import Portfolio from './pages/Portfolio';
 import WebDesign from './pages/WebDesign';
 import Signin from './pages/forms/Signin';

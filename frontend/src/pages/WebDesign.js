@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function WebDesign() {
   return (
@@ -27,7 +28,7 @@ function WebDesign() {
               <ol>
                 <li>
                   The process of designing a website: email me to schedule an
-                  appointment in Inland Empire. If a physical appointment is not
+                  appointment in [your area]. If a physical appointment is not
                   necessary, we can chat about your vision.
                 </li>
                 <li>
@@ -68,6 +69,11 @@ function WebDesign() {
                   your website design.
                 </li>
               </ol>
+              <Link to='/contact'>
+                <button className='btn btn-primary mt-3'>
+                  Contact for Quote
+                </button>
+              </Link>
             </div>
           </Col>
           <Col md={6}>

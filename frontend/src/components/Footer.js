@@ -23,12 +23,22 @@ const Footer = () => {
 
               <li>
                 <Link
-                  to='https://www.youtube.com/channel/'
+                  to='https://www.instagram.com/channel/'
                   className='youtubeIcon'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <i className='fab fa-youtube'></i> YouTube
+                  <i className='fab fa-instagram'></i> Instagram
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to='https://www.x.com/channel/'
+                  className='youtubeIcon'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <i className='fab fa-twitter'></i> X
                 </Link>
               </li>
             </ul>

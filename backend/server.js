@@ -9,6 +9,7 @@ const uploadRouter = require('./routes/uploadRoutes.js');
 const websiteRouter = require('./routes/websiteRoutes.js');
 const summaryRouter = require('./routes/summaryRoutes');
 const messageRouter = require('./routes/messageRoutes.js');
+const typewriterRouter = require('./routes/typewriterRoutes.js'); // Import the new typewriter routes
 
 const config = require('./config.js');
 
@@ -37,6 +38,7 @@ app.use('/api/users', userRouter);
 app.use('/api/websites', websiteRouter);
 app.use('/api/summary', summaryRouter);
 app.use('/api/messages', messageRouter);
+app.use('/api', typewriterRouter); // Add the typewriter routes
 
 // Error handling middleware
 app.use((err, req, res, next) => {

@@ -65,9 +65,9 @@ export default function Contact() {
           </Form.Group>
 
           <Form.Group className='mb-3' controlId='subject'>
-            <Form.Label>Subject / Website</Form.Label>
+            <Form.Label>Subject / Project Description</Form.Label>
             <Form.Control
-              placeholder='ex: What type of website you are interested in?'
+              placeholder='ex: Landing Page or Full Stack?'
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               required
@@ -85,7 +85,6 @@ export default function Contact() {
               required
             />
           </Form.Group>
-
           <div>
             <Button variant='primary' disabled={loading} type='submit'>
               {loading ? 'Sending...' : 'Submit'}

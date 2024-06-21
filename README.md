@@ -294,3 +294,14 @@ folder: pages
 Home.js > updated Jumbotron
 
 index.css > updated with typewriter-effect
+
+# 13th Commit-Update Contact form
+
+FRONTEND
+folder: components
+Footer.js > updated
+
+folder: pages
+Contact.js > updated
+Portfolio.js > updated
+WebDesign.js > updated

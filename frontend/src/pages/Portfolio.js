@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 import { getError } from '../utils';
 import { Helmet } from 'react-helmet';
@@ -77,6 +77,9 @@ export default function Home() {
             ~ Discover the creativity and innovation in our meticulously crafted
             website portfolio. Dive into our collection and get inspired! ~
           </p>
+          <Link to='/contact'>
+            <button className='btn btn-primary mt-3'>Contact for Quote</button>
+          </Link>
         </div>
 
         <br />
