@@ -169,7 +169,7 @@ export default function WebsiteList() {
         <MessageBox variant='danger'>{error}</MessageBox>
       ) : (
         <>
-          <div className='box'>
+          <div className='box table-responsive'>
             <Table responsive striped bordered className='noWrap'>
               <thead className='thead'>
                 <tr>
@@ -203,7 +203,7 @@ export default function WebsiteList() {
                     <td>{website.name}</td>
                     <td>{website.language}</td>
                     <td>{website.languageDescription}</td>
-                    <td style={{ width: '20%' }}>{website.description}</td>
+                    <td className='description-cell'>{website.description}</td>
                     <td>
                       <a
                         href={website.link}

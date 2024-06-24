@@ -19,10 +19,10 @@ websiteRouter.post(
       name: '' + Date.now(),
       slug: '' + Date.now(),
       image: '/images/',
-      language: 'language',
-      languageDescription: 'language description',
+      language: 'MERN Stack',
+      languageDescription: 'MongoDB, Express, AngularJS, Node.js',
       description: 'description',
-      link: 'link',
+      link: 'https://www.domain.com',
     });
     const website = await newWebsite.save();
     res.send({ message: 'Website Created', website });

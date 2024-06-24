@@ -305,3 +305,15 @@ folder: pages
 Contact.js > updated
 Portfolio.js > updated
 WebDesign.js > updated
+
+# 14 Commit-Update WebsiteList, websiteRoutes
+
+BACKEND
+folder: routes
+websiteRoutes.js > updated websiteRouter.post to show Language and Language Description
+
+FRONTEND
+folder: pages
+WebsiteList.js > updated td with 'description-cell'
+
+index.css > updated with 'description-cell' for mobile view

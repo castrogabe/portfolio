@@ -164,6 +164,28 @@ a.email {
   max-width: 100%;
 }
 
+/* WebsiteList */
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table td {
+  word-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.description-cell {
+  width: 25%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
 @media (max-width: 700px) {
   .navbar-toggler {
     background-color: var(--primary);
@@ -196,5 +218,25 @@ a.email {
   h3 {
     font-size: small;
     color: var(--primary);
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table th,
+  .table td {
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .description-cell {
+    display: block;
+    width: 800px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
   }
 }
