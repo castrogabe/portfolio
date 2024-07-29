@@ -29,7 +29,7 @@ import Signin from './pages/forms/Signin';
 import Signup from './pages/forms/Signup';
 
 // user protected pages
-import Profile from './pages/Profile';
+import Profile from './pages/forms/Profile';
 
 function App() {
   return (

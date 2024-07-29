@@ -17,6 +17,7 @@ export default function Signin() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
@@ -42,6 +43,11 @@ export default function Signin() {
     }
   }, [navigate, redirect, userInfo]);
 
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword); // Toggle showPassword state
+  };
+
   return (
     <div className='content'>
       <Helmet>
@@ -60,17 +66,41 @@ export default function Signin() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className='mb-3' controlId='password'>
+
+            {/* <Form.Group className='mb-3' controlId='password'>
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type='password'
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
+            </Form.Group> */}
+            <Form.Group className='mb-3' controlId='password'>
+              <Form.Label>Password</Form.Label>
+              <div className='input-group'>
+                <Form.Control
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder='Minimum length 8, 1 uppercase, 1 lowercase, 1 digit, and 1 special character'
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Button
+                  variant='outline-secondary'
+                  onClick={togglePasswordVisibility}
+                >
+                  <i
+                    className={`fa ${
+                      showPassword ? 'fas fa-eye-slash' : 'fa-eye'
+                    }`}
+                  ></i>
+                </Button>
+              </div>
             </Form.Group>
+
             <div className='mb-3'>
               <Button type='submit'>Sign In</Button>
             </div>
+
             <div className='mb-3'>
               New customer?{' '}
               <Link to={`/signup?redirect=${redirect}`}>

@@ -128,11 +128,30 @@ userRouter.post(
 userRouter.post(
   '/signup',
   expressAsyncHandler(async (req, res) => {
+    const { name, email, password } = req.body;
+    // Password complexity requirements (example: minimum length, uppercase, lowercase, digit, and special character)
+    // At least one digit ((?=.*\d))
+    // At least one lowercase letter ((?=.*[a-z]))
+    // At least one uppercase letter ((?=.*[A-Z]))
+    // At least one special character ((?=.*[^a-zA-Z\d]))
+    // A minimum length of 8 characters (.{8,})
+    const passwordRegex =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+      return res
+        .status(400)
+        .send({ message: 'Password does not meet complexity requirements.' });
+    }
+
+    const hashedPassword = bcrypt.hashSync(password, 8);
+
     const newUser = new User({
-      name: req.body.name,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password),
+      name,
+      email,
+      password: hashedPassword,
     });
+
     const user = await newUser.save();
     res.send({
       _id: user._id,

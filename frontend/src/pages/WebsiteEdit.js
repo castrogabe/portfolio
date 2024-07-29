@@ -137,10 +137,10 @@ export default function WebsiteEdit() {
   return (
     <Container className='small-container'>
       <Helmet>
-        <title>Edit Website {websiteId}</title>
+        <title>Website Edit {websiteId}</title>
       </Helmet>
       <br />
-      <h4 className='box'>Edit Website {websiteId}</h4>
+      <h4 className='box'>Website Edit {websiteId}</h4>
 
       {loading ? (
         <LoadingBox />

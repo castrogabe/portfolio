@@ -1,9 +1,9 @@
 import React, { useContext, useReducer, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Button, Form, Spinner } from 'react-bootstrap';
-import { Store } from '../Store';
+import { Store } from '../../Store';
 import { toast } from 'react-toastify';
-import { getError } from '../utils';
+import { getError } from '../../utils';
 import axios from 'axios';
 
 const reducer = (state, action) => {
@@ -105,7 +105,7 @@ export default function Profile() {
           <div className='input-group'>
             <Form.Control
               type={showPassword ? 'text' : 'password'}
-              placeholder='password'
+              placeholder='Minimum length 8, 1 uppercase, 1 lowercase, 1 digit, and 1 special character'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -125,7 +125,7 @@ export default function Profile() {
           <div className='input-group'>
             <Form.Control
               type={showConfirmPassword ? 'text' : 'password'}
-              placeholder='password'
+              placeholder='Minimum length 8, 1 uppercase, 1 lowercase, 1 digit, and 1 special character'
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />

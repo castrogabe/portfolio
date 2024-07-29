@@ -306,7 +306,7 @@ Contact.js > updated
 Portfolio.js > updated
 WebDesign.js > updated
 
-# 14 Commit-Update WebsiteList, websiteRoutes
+# 14th Commit-Update WebsiteList, websiteRoutes
 
 BACKEND
 folder: routes
@@ -317,3 +317,17 @@ folder: pages
 WebsiteList.js > updated td with 'description-cell'
 
 index.css > updated with 'description-cell' for mobile view
+
+# 15th Commit-Regex, fas fa-eye-slash Signin, Signup
+
+BACKEND
+folder: routes
+userRoutes.js > updated with Regex
+
+FRONTEND
+folder: pages
+Profile.js > moved into forms folder
+Signin.js > updated with Regex and eye-slash
+Signup.js > updated with Regex and eye-slash
+
+App.js > updated Profile.js with /pages/forms/profile
