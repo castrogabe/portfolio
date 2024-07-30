@@ -346,3 +346,9 @@ ResetPassword.js > added
 Signin.js > updated with ForgetPassword.js Link
 
 App.js > updated with pages/forms/ForgetPassword.js, ResetPassword.js
+
+# 17th Commit Delete User Fix
+
+BACKEND
+folder: routes
+userRoutes.js > updated with userRouter.delete (User User.deleteOne)
