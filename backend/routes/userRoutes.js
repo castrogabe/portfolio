@@ -1,8 +1,15 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const expressAsyncHandler = require('express-async-handler');
 const User = require('../models/userModel.js');
-const { isAuth, isAdmin, generateToken } = require('../utils.js');
+const {
+  isAuth,
+  isAdmin,
+  generateToken,
+  baseUrl,
+  transporter,
+} = require('../utils.js');
 
 const userRouter = express.Router();
 
@@ -130,11 +137,6 @@ userRouter.post(
   expressAsyncHandler(async (req, res) => {
     const { name, email, password } = req.body;
     // Password complexity requirements (example: minimum length, uppercase, lowercase, digit, and special character)
-    // At least one digit ((?=.*\d))
-    // At least one lowercase letter ((?=.*[a-z]))
-    // At least one uppercase letter ((?=.*[A-Z]))
-    // At least one special character ((?=.*[^a-zA-Z\d]))
-    // A minimum length of 8 characters (.{8,})
     const passwordRegex =
       /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).{8,}$/;
 
@@ -159,6 +161,81 @@ userRouter.post(
       email: user.email,
       isAdmin: user.isAdmin,
       token: generateToken(user),
+    });
+  })
+);
+
+// reset password
+userRouter.post(
+  '/forget-password',
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findOne({ email: req.body.email });
+
+    if (user) {
+      const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
+        expiresIn: '10m', // Change the expiration time to 10 minutes
+      });
+      user.resetToken = token;
+      await user.save();
+
+      console.log(`${baseUrl()}/reset-password/${token}`);
+
+      const emailContent = {
+        from: 'profile.com', // your website.com
+        to: `${user.name} <${user.email}>`,
+        subject: `Reset Password`,
+        html: ` 
+        <p>Please Click the following link to reset your password, link expires in 10 minutes</p> 
+        <a href="${baseUrl()}/reset-password/${token}"}>Reset Password</a>
+        `,
+      };
+
+      try {
+        // Send the email using the `transporter`
+        const info = await transporter.sendMail(emailContent);
+        console.log('Email sent: ' + info.response);
+      } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).send({ message: 'Error sending email.' });
+        return;
+      }
+      res.send({ message: 'We sent reset password link to your email.' });
+    } else {
+      res.status(404).send({ message: 'Email Not Found' });
+    }
+  })
+);
+
+userRouter.post(
+  '/reset-password',
+  expressAsyncHandler(async (req, res) => {
+    const { password, token } = req.body;
+
+    // Password complexity requirements
+    const passwordRegex =
+      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+      return res
+        .status(400)
+        .send({ message: 'Password does not meet complexity requirements.' });
+    }
+
+    jwt.verify(token, process.env.JWT_SECRET, async (err, decode) => {
+      if (err) {
+        res.status(401).send({ message: 'Invalid Token' });
+      } else {
+        const user = await User.findOne({ resetToken: token });
+        if (user) {
+          user.password = bcrypt.hashSync(password, 8);
+          await user.save();
+          res.send({
+            message: 'Password reset successfully',
+          });
+        } else {
+          res.status(404).send({ message: 'User not found' });
+        }
+      }
     });
   })
 );

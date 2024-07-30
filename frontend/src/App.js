@@ -27,6 +27,8 @@ import Portfolio from './pages/Portfolio';
 import WebDesign from './pages/WebDesign';
 import Signin from './pages/forms/Signin';
 import Signup from './pages/forms/Signup';
+import ForgetPassword from './pages/forms/ForgetPassword';
+import ResetPassword from './pages/forms/ResetPassword';
 
 // user protected pages
 import Profile from './pages/forms/Profile';
@@ -46,6 +48,8 @@ function App() {
           <Route path='/mernRender' element={<MernRender />} />
           <Route path='/signin' element={<Signin />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/forget-password' element={<ForgetPassword />} />
+          <Route path='/reset-password/:token' element={<ResetPassword />} />
           {/* Protected Routes */}
           <Route
             path='/profile'

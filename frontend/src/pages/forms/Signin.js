@@ -67,14 +67,6 @@ export default function Signin() {
               />
             </Form.Group>
 
-            {/* <Form.Group className='mb-3' controlId='password'>
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type='password'
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group> */}
             <Form.Group className='mb-3' controlId='password'>
               <Form.Label>Password</Form.Label>
               <div className='input-group'>
@@ -106,6 +98,11 @@ export default function Signin() {
               <Link to={`/signup?redirect=${redirect}`}>
                 Create your account
               </Link>
+            </div>
+
+            <div className='mb-3'>
+              Forget Password?{' '}
+              <Link to={`/forget-password`}>Reset Password</Link>
             </div>
           </Form>
         </Col>

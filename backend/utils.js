@@ -41,6 +41,9 @@ const isAdmin = (req, res, next) => {
   }
 };
 
+// Define the baseUrl function
+const baseUrl = () => process.env.BASE_URL;
+
 const transporter = nodemailer.createTransport({
   service: 'gmail', // Use your email service provider
   auth: {
@@ -49,4 +52,4 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-module.exports = { transporter, generateToken, isAuth, isAdmin };
+module.exports = { transporter, generateToken, isAuth, isAdmin, baseUrl };

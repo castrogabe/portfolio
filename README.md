@@ -325,9 +325,24 @@ folder: routes
 userRoutes.js > updated with Regex
 
 FRONTEND
-folder: pages
+folder: pages/forms
 Profile.js > moved into forms folder
 Signin.js > updated with Regex and eye-slash
 Signup.js > updated with Regex and eye-slash
 
 App.js > updated Profile.js with /pages/forms/profile
+
+# 16th Commit Reset Password
+
+BACKEND
+folder: routes
+userRoutes.js > updated with forget-password
+utils.js > updated with process.env.BASE_URL
+
+FRONTEND
+folder: pages/forms
+ForgetPassword.js > added
+ResetPassword.js > added
+Signin.js > updated with ForgetPassword.js Link
+
+App.js > updated with pages/forms/ForgetPassword.js, ResetPassword.js
