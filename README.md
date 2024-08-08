@@ -352,3 +352,23 @@ App.js > updated with pages/forms/ForgetPassword.js, ResetPassword.js
 BACKEND
 folder: routes
 userRoutes.js > updated with userRouter.delete (User User.deleteOne)
+
+# 18th Commit-Deployment, Render ** Final **
+
+FRONTEND
+cd root > npm init (this creates a {}package.json in the root)
+. add your projects name "Portfolio"
+. enter through the questions
+. make sure it says deployment
+. edit "scripts"
+. push code to github before next step
+. https://render.com - create account / Connect to GitHub for repository
+. https://www.gabewd.com - Deployment dropdown > MernRender
+
+"scripts": {
+"build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
+"start": "node backend/server.js",
+"test": "echo \"Error: no test specified\" && exit 1"
+},
+
+Push code to github
